@@ -1,0 +1,14 @@
+.header {
+    padding: 0 4px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.feedback {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

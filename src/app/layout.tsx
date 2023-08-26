@@ -1,5 +1,6 @@
 import * as React from "react";
 import { AppShell } from "@/component/app/appshell";
+import { AuthShell } from "@/component/auth/authshell";
 
 export default function Layout({
   children,
@@ -8,7 +9,7 @@ export default function Layout({
 }) {
   return (
     <AppShell>
-      {children}
+      <AuthShell>{children}</AuthShell>
     </AppShell>
   );
 }

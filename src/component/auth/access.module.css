@@ -1,0 +1,26 @@
+.access {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background: url('/image/background.svg') center / cover no-repeat;
+}
+
+.access form {
+    width: 100%;
+    max-width: 370px;
+    background: hotpink;
+}
+
+.submit {
+    width: 100%;
+}
+
+.container {
+    padding: 10px;
+    background: var(--white);
+}
+
+.graphic {
+    display: grid;
+    place-items: center;
+}
