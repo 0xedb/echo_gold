@@ -1,0 +1,14 @@
+.body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.footer {
+    color: var(--white);
+    display: flex;
+    min-height: 54px;
+    padding: 2px 8px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--offBlack);
+}
