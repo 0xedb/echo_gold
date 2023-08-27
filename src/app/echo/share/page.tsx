@@ -1,7 +1,9 @@
 import * as React from "react";
 import styles from "./page.module.css";
+import people from '@/app/people.json' assert { type: 'json' };
 
-export default function Share() {
+export default async function Share() {
+  console.log({people})
   return (
     <>
       <span />

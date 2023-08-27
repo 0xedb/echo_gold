@@ -1,6 +1,6 @@
 
 import { NextResponse } from "next/server";
-import people from './people.json' assert { type: 'json' };
+import people from '@/app/people.json' assert { type: 'json' };
 
 type Input = {
     email: string
