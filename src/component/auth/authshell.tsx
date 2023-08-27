@@ -17,11 +17,15 @@ export async function AuthShell({ children }: AuthProps) {
   //   }
 
   // read the cookie and load appropriate user
-  const cookie = cookies().get("id") ?? null;
-  console.log("IDDDDDDDDDDDDDDDDDDDDDDDDDD", cookie?.value);
+  const cookie = cookies().get("id");
 
-  if(cookie?.value) {
-    return <>{children}</>
+  if (cookie?.value) {
+    return (
+      <>
+        <input type="hidden" value={cookie?.value} />
+        {children}
+      </>
+    );
   }
 
   return <Access />;

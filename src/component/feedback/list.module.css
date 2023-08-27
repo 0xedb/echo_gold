@@ -1,0 +1,7 @@
+.list {
+    display: flex;
+}
+
+.img {
+    border-radius: 100%;
+}
