@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { EchoAuth } from "@/lib/auth";
 import { useRouter } from "next/navigation";
 import styles from "@/component/auth/access.module.css";
 import SlInput from "@shoelace-style/shoelace/dist/react/input";
 import SlButton from "@shoelace-style/shoelace/dist/react/button";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 type FormData = {
   email: string;
@@ -15,9 +15,6 @@ type FormData = {
 export function Access() {
   const router = useRouter();
   const formRef = React.useRef<HTMLFormElement>();
-  const [isLogin, setIsLogin] = React.useState(true);
-
-  const supabase = createClientComponentClient();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,50 +29,24 @@ export function Access() {
     >;
     console.log({ email, password });
 
-    // get values
-    // make call to supabase for login
-    console.log(isLogin ? "logging in" : "signing up");
-
-    let res = isLogin
-      ? await supabase.auth.signInWithPassword({ email, password })
-      : await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: `${location.origin}/auth/callback`,
-        },
-      });
-
-    // const ress = await supabase.auth.signUp({
-    //   email,
-    //   password,
-    //   options: {
-    //     emailRedirectTo: `${location.origin}/auth/callback`,
-    //   },
-    // });
-
-    // check status of request
-    // reset form if necessary
-
-    console.log("--", { res });
-    // TODO: check if no errors before refresh
-    router.refresh();
+    try {
+      const res = await EchoAuth.signIn(email, password);
+      console.log(res);
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+    }
   };
-
-  const toggleAccess = () => setIsLogin((prev) => !prev);
 
   return (
     <div className={styles.access}>
       <form onSubmit={handleSubmit} ref={formRef}>
         <div className={styles.container}>
           <div className={styles.graphic}>
-            <img src="/image/echo.svg" alt='Echo icon' />
+            <img src="/image/echo.svg" alt="Echo icon" />
             <h2>Echo</h2>
           </div>
-          <SlButton onClick={toggleAccess}>
-            {isLogin ? "Sign Up" : "Login"}
-          </SlButton>
-          <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+          <h2>Login</h2>
           <SlInput
             id="email"
             size="large"
@@ -97,7 +68,7 @@ export function Access() {
             type="submit"
             className={styles.submit}
           >
-            {isLogin ? "Login" : "Sign Up"}
+            Login
           </SlButton>
         </div>
       </form>
