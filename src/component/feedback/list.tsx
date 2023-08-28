@@ -7,9 +7,9 @@ import SlButton from "@shoelace-style/shoelace/dist/react/button";
 const DEFAULT_IMAGE =
   "https://cdn.stocksnap.io/img-thumbs/280h/sky-night_OANZXN5973.jpg";
 
-export function List({ id, name, avatarUrl }: User) {
+export async function ListItem({ id, name, avatarUrl }: User) {
   return (
-    <div className={styles.list}>
+    <li className={styles.list}>
       <Image
         className={styles.img}
         src={avatarUrl ?? DEFAULT_IMAGE}
@@ -17,8 +17,10 @@ export function List({ id, name, avatarUrl }: User) {
         height={58}
         width={58}
       />
-      <div>{name}</div>
-      <SlButton>Hello</SlButton>
-    </div>
+      <div className={styles.name}>{name}</div>
+      <div className={styles.button}>
+        <SlButton>Hello</SlButton>
+      </div>
+    </li>
   );
 }

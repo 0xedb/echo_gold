@@ -2,9 +2,11 @@
 
 import * as React from "react";
 import type { TPeople } from "@/util/type";
-import { List } from "./list";
+import { ListItem } from "./list";
 
 type ListData = { data: TPeople };
+
+// TODO: get given rec from here
 
 export function Share({ data }: ListData) {
   const [id, setId] = React.useState("");
@@ -17,7 +19,11 @@ export function Share({ data }: ListData) {
     setId(idInput.value);
   });
 
-  return data.filter((person) => id !== person.id).map((
-    person,
-  ) => <List key={person.id} {...person} />);
+  return (
+    <ul>
+      {data.filter((person) => id !== person.id).map((
+        person,
+      ) => <ListItem key={person.id} {...person} />)}
+    </ul>
+  );
 }
