@@ -3,8 +3,7 @@ import styles from "./page.module.css";
 import people from "@/app/people.json" assert { type: "json" };
 import { Share } from "@/component/feedback/share";
 
-export default async function Page() {
-  // use date selection to change people logic
+export default async function Page() { 
 
   // TODO: get if the person needs review  or not from here
 

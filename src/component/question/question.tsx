@@ -1,30 +1,41 @@
 "use client";
 
 import * as React from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import styles from "./question.module.css";
 import SlButton from "@shoelace-style/shoelace/dist/react/button";
 import questions from "@/app/questions.json" assert { type: "json" };
 
-export function Question() {
+// save all answers in responseStore
+// unmoutn responseStore by cleanup
+
+export function Question({ user = "" }: { user: string }) {
   const [index, setIndex] = React.useState(0);
-  const router = usePathname();
-  const searchParams = useSearchParams();
-  console.log(router);
-  console.log(router, "---", searchParams.get("f"));
+
+  const handleNext = () => {
+    setIndex((prev) => index === questions.length - 1 ? prev : prev + 1);
+  };
+
+  const handlePrevious = () => {
+    setIndex((prev) => index === 0 ? 0 : prev - 1);
+  };
+
   return (
     <div>
       <div>
         <h1>{questions.at(index).label}</h1>
-        <div>Share Your Feedback For Chris</div>
-        <div>dafkj</div>
+        <div className={styles.info}>Share Your Feedback For {user}</div>
       </div>
       <div>question options</div>
       <div>
-        <SlButton>Previous</SlButton>
-        <SlButton>Next</SlButton>
+        <SlButton onClick={handlePrevious}>Previous</SlButton>
+        <SlButton onClick={handleNext}>Next</SlButton>
       </div>
       <div>
-        <hr />
+        <progress
+          className={styles.progress}
+          max={questions.length}
+          value={index + 1}
+        />
         <h3>Questions Completed</h3>
         <div>1/{questions.length}</div>
       </div>

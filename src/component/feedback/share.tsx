@@ -1,22 +1,22 @@
 "use client";
 
 import * as React from "react";
-import type { TPeople } from "@/util/type";
 import { ListItem } from "./list";
+import { useSnapshot } from "valtio";
+import { userStore } from "@/lib/store";
+import type { TPeople } from "@/util/type";
 
 type ListData = { data: TPeople };
 
-// TODO: get given rec from here
-
 export function Share({ data }: ListData) {
-  const [id, setId] = React.useState("");
+  const { id } = useSnapshot(userStore);
 
   React.useEffect(() => {
     const idInput = document.querySelector(
       'input[type="hidden"]',
     ) as HTMLInputElement;
 
-    setId(idInput.value);
+    userStore.id = idInput.value;
   });
 
   return (
