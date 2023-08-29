@@ -6,9 +6,9 @@ import styles from "./list.module.css";
 import { givenStore, userStore } from "@/lib/store";
 import SlButton from "@shoelace-style/shoelace/dist/react/button";
 import { useRouter } from "next/navigation";
+import { DEFAULT_IMAGE } from "@/lib/constant";
 
-const DEFAULT_IMAGE =
-  "https://cdn.stocksnap.io/img-thumbs/280h/sky-night_OANZXN5973.jpg";
+
 
 export function ListItem({ id, name, avatarUrl }: User) {
   const router = useRouter();

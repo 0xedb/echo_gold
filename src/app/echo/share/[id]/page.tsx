@@ -10,7 +10,7 @@ export default function Page({ params }: { params: { id: string } }) {
       <span />
       <div>
         <Question
-          user={people.find((person) => person.id === params.id).name}
+          user={people.find((person) => person.id === params.id)}
         />
       </div>
       <span />
