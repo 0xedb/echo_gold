@@ -60,7 +60,6 @@ export function Question({ user }: { user: User }) {
     router.back();
   }
 
-  // TODO: add loading object to dynamic import
   const QuestionKind: React.ComponentType<
     { id: string } | TChoice & { id: string }
   > = React.useMemo(() => {

@@ -15,8 +15,6 @@ type TBulkProps = {
   }[];
 };
 
-// TODO: after submitting review for someone reload data for the feedback page
-
 export function Bulk({ title, response }: TBulkProps) {
   const [data] = React.useState(() => {
     const filtered: { [x: string]: any[] } = {};

@@ -16,8 +16,6 @@ async function getReceived(id: string) {
   }
 }
 
-// TOOD: search all maps and add key
-
 export default async function Page({
   searchParams,
 }: {
