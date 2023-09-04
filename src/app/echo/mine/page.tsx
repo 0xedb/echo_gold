@@ -7,11 +7,13 @@ import styles from "./page.module.css";
 async function getGiven(id: string) {
   try {
     const key = `${GIVEN_KEY}:${id}`;
+    console.log(process.env);
+    console.log(key);
 
     const res = await kv.lrange(key, 0, -1);
-
     return JSON.parse(JSON.stringify(res));
   } catch (err) {
+    console.log(err);
     console.error(err);
   }
 }
