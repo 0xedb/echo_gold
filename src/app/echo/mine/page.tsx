@@ -23,8 +23,7 @@ export default async function Page({
 }: {
   searchParams?: { [key: string]: undefined };
 }) {
-  // const data = await getGiven(searchParams?.u || "");
-  const data = []
+  const data = await getGiven(searchParams?.u || "");
 
   return (
     <div className={styles.page}>
