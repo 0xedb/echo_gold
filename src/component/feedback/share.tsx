@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { ListItem } from "./list";
-import { useSnapshot } from "valtio";
+import { useSnapshot } from "valtio"; 
 import { userStore } from "@/lib/store";
 import type { TPeople } from "@/util/type";
 

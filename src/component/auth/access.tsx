@@ -27,11 +27,9 @@ export function Access() {
       keyof FormData,
       string
     >;
-    console.log({ email, password });
 
     try {
-      const res = await EchoAuth.signIn(email, password);
-      console.log(res);
+      await EchoAuth.signIn(email, password);
       router.refresh();
     } catch (err) {
       console.error(err);
@@ -46,30 +44,36 @@ export function Access() {
             <img src="/image/echo.svg" alt="Echo icon" />
             <h2>Echo</h2>
           </div>
-          <h2>Login</h2>
-          <SlInput
-            id="email"
-            size="large"
-            name="email"
-            type="email"
-            placeholder="Email"
-            required
-          />
-          <SlInput
-            id="password"
-            size="large"
-            name="password"
-            type="password"
-            placeholder="Password"
-            required
-          />
-          <SlButton
-            size="large"
-            type="submit"
-            className={styles.submit}
-          >
-            Login
-          </SlButton>
+          <h4 className={styles.title}>Login</h4>
+          <div className={styles.spacer}>
+            <SlInput
+              id="email"
+              size="large"
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div className={styles.spacer}>
+            <SlInput
+              id="password"
+              size="large"
+              name="password"
+              type="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div className={styles.spacer}>
+            <SlButton
+              size="large"
+              type="submit"
+              className={styles.submit}
+            >
+              Login
+            </SlButton>
+          </div>
         </div>
       </form>
     </div>

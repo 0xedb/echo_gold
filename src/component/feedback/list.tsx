@@ -1,19 +1,13 @@
 import * as React from "react";
 import Image from "next/image";
-import { useSnapshot } from "valtio";
 import type { User } from "@/lib/auth";
 import styles from "./list.module.css";
-import { givenStore, userStore } from "@/lib/store";
-import SlButton from "@shoelace-style/shoelace/dist/react/button";
 import { useRouter } from "next/navigation";
-import { DEFAULT_IMAGE } from "@/lib/constant";
-
-
+import { DEFAULT_IMAGE } from "@/util/constant";
+import SlButton from "@shoelace-style/shoelace/dist/react/button";
 
 export function ListItem({ id, name, avatarUrl }: User) {
   const router = useRouter();
-  const userSnap = useSnapshot(userStore);
-  const givenSnap = useSnapshot(givenStore);
 
   const handleReview = () => {
     const link = `/echo/share/${id}`;
@@ -32,11 +26,8 @@ export function ListItem({ id, name, avatarUrl }: User) {
       />
       <div className={styles.name}>{name}</div>
       <div className={styles.button}>
-        {/* // TODO: check if give id */}
         <SlButton onClick={handleReview}>
-          {givenSnap?.[userSnap?.id || ""]?.[id]
-            ? "View Submissions"
-            : "Fill Out"}
+          Fill Out
         </SlButton>
       </div>
     </li>

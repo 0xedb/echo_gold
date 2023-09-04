@@ -1,0 +1,14 @@
+.choice {
+    padding: 38px 28px;
+    margin: 16px 0;
+    background: rgba(242, 243, 244, 1);
+}
+
+.selected {
+    background: rgba(89, 99, 110, 1);
+    color: var(--white);
+}
+
+.shell {
+    margin: 20px 0;
+}

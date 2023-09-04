@@ -2,3 +2,12 @@
     display: flex;
     justify-content: space-between;
 }
+
+.share {
+    position: relative;
+    border: 1px solid var(--disabledColor);
+}
+
+.share ul li {
+    border-bottom: 0.5px solid var(--disabledColor);
+}

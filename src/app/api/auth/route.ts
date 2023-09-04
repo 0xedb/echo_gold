@@ -18,3 +18,11 @@ export async function POST(req: Request) {
 
     return response
 }
+
+export async function DELETE(req: Request) {
+    const response = NextResponse.next()
+
+    response.cookies.delete('id')
+
+    return response
+}

@@ -2,7 +2,11 @@
     display: grid;
     grid-template-columns: auto auto 1fr;
     align-items: center;
-    margin: 18px;
+    padding: 18px;
+}
+
+.list:hover {
+    background: rgba(213, 176, 242, 0.1);
 }
 
 .img {
@@ -12,6 +16,13 @@
 .button {
     display: flex;
     justify-content: flex-end;
+
+}
+
+.button sl-button::part(base) {
+    color: white;
+    background-color: var(--primaryColor);
+    min-width: 150px;
 }
 
 .name {

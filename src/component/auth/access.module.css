@@ -8,19 +8,32 @@
 .access form {
     width: 100%;
     max-width: 370px;
-    background: hotpink;
 }
 
 .submit {
     width: 100%;
 }
 
+.container sl-button::part(base) {
+    color: var(--white);
+    background-color: var(--primaryColor);
+}
+
 .container {
-    padding: 10px;
+    padding: 40px;
     background: var(--white);
+}
+
+.spacer {
+    margin: 12px 0;
 }
 
 .graphic {
     display: grid;
     place-items: center;
+    margin-top: 40px;
+}
+
+.title {
+    padding-top: 20px;
 }

@@ -1,7 +1,11 @@
 .header {
-    padding: 0 4px;
+    min-height: 80px;
+    padding: 10px 4px;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    background-color: var(--lightGrey);
+    margin-bottom: 50px;
 }
 
 .header a {
@@ -10,5 +14,47 @@
 
 .feedback {
     display: grid;
+    position: relative;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    position: relative;
+    ;
+}
+
+.img {
+    border-radius: 100%;
+}
+
+.view {
+    padding: 0 8px;
+}
+
+.header a {
+    color: unset;
+    font-weight: 600;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+
+.feedback small.active {
+    position: absolute;
+    top: 240%;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--primaryColor);
+    display: flex;
+    justify-content: center;
 }

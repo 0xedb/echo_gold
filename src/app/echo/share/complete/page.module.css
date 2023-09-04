@@ -1,0 +1,8 @@
+.share ul li {
+    border-bottom: 0.5px solid var(--disabledColor);
+}
+
+.share {
+    border: 0.5px solid var(--disabledColor);
+    margin-top: 20px;
+}

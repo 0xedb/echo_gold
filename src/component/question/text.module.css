@@ -1,0 +1,8 @@
+.shell {
+    margin: 30px 0;
+    height: 100%;
+}
+
+sl-textarea.input::part(form-control-input) {
+    height: 80%;
+}

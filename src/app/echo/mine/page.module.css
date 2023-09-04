@@ -1,0 +1,20 @@
+.page {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page>* {
+    width: 100%;
+    max-width: 80%;
+}
+
+.mid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bulk {
+    width: 100%;
+}

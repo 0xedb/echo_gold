@@ -5,6 +5,7 @@
 .header {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 18px;
 }
 
 .progress {
@@ -13,4 +14,41 @@
 
 .info {
     text-transform: uppercase;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.progress {
+
+    margin: 20px 0;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+
+.back>* {
+    padding-right: 2px;
+}
+
+.quest {
+    padding: 18px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    min-height: 440px;
+}
+
+.controls sl-button::part(base) {
+    min-width: 150px;
+}
+
+.next::part(base) {
+    background-color: var(--primaryColor);
+    color: var(--white)
 }

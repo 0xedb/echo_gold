@@ -6,7 +6,7 @@ export default function Loading() {
     <>
       <span />
       <Image
-        src={"/image/share_feedback.svg"}
+        src={"/image/give_feedback.svg"}
         alt={"user.id"}
         height={700}
         width={780}

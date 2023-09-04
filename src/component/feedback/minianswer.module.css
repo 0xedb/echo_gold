@@ -1,0 +1,34 @@
+.scale {
+    display: flex;
+}
+
+.box {
+    width: 33px;
+    height: 33px;
+    background-color: wheat;
+    background: linear-gradient(0deg, #F2F3F4, #F2F3F4),
+        linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.colored {
+    background: var(--primaryColor);
+}
+
+.skipped {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    color: white;
+    background: rgba(172, 177, 182, 1);
+
+    width: 83px;
+    height: 20px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.text {
+    font-weight: 600;
+}
