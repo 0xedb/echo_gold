@@ -6,25 +6,28 @@ import { usePathname, useRouter } from "next/navigation";
 import { useUserId } from "@/util/hook";
 import people from "@/app/people.json" assert { type: "json" };
 import Image from "next/image";
-import { DEFAULT_IMAGE } from "@/util/constant";
+import { DEFAULT_IMAGE, X_ACTION_DEL } from "@/util/constant";
 
 export function Header() {
   const id = useUserId();
   const router = useRouter();
   async function handleLogout() {
-    // TODO: work on logout
-    // logout and refresh
     try {
-      await fetch("/api/auth", { method: "DELETE" });
+      await fetch("/api/auth", {
+        method: "DELETE",
+        headers: {
+          [X_ACTION_DEL]: "",
+        },
+      });
       router.refresh();
     } catch (err) {
       console.error;
     }
   }
 
-  const userId = useUserId()
+  const userId = useUserId();
 
-  const path = usePathname(); 
+  const path = usePathname();
 
   return (
     <div className={styles.header}>

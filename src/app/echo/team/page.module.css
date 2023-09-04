@@ -1,0 +1,15 @@
+.top {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top > * {
+    width: 100%;
+    max-width: 80%;
+}
+
+.title {
+    font-weight: 600;
+}

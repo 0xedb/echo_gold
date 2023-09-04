@@ -4,3 +4,4 @@ export const DEFAULT_IMAGE =
 export const GIVEN_KEY = 'given'
 export const RECEIVED_KEY = 'receive'
 export const RESPONSE_KEY = 'response'
+export const X_ACTION_DEL = 'X-ACTION-DEL'

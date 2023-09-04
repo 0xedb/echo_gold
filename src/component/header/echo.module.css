@@ -1,6 +1,6 @@
 .header {
     min-height: 80px;
-    padding: 10px 4px;
+    padding: 0 4px;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     align-items: center;
@@ -27,7 +27,7 @@
 .info {
     display: flex;
     position: relative;
-    ;
+    border-left: 1px solid rgba(217, 220, 222, 1);
 }
 
 .img {

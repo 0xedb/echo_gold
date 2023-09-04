@@ -35,11 +35,8 @@ export function Bulk({ title, response }: TBulkProps) {
   const [uId, setUId] = React.useState(Object.keys(data)?.at(0) || "");
 
   function handleSelect(id: string) {
-    console.log("handling");
     setUId(id);
   }
-
-  console.log({ uId }, data);
 
   return (
     <>
@@ -77,7 +74,7 @@ export function Bulk({ title, response }: TBulkProps) {
               </div>
               {data[uId].map((res, idx) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={idx}>
                     {questions.map((qs, i) => (
                       <div key={`qs-${i}-${idx}`} className={styles.mini}>
                         <MiniAnswer
@@ -100,13 +97,12 @@ export function Bulk({ title, response }: TBulkProps) {
 }
 
 export function Empty() {
-  // TODO: add emoji
   return (
-    <div>
-      <h1>No Feedback to display</h1>
-      <h3>
+    <div className={styles.empty}>
+      <div className={styles.top}>No feedback to display 🔮</div>
+      <div className={styles.details}>
         There is no feedback to display at this time - check back in a bit!
-      </h3>
+      </div>
     </div>
   );
 }

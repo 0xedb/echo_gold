@@ -55,8 +55,6 @@ export function Question({ user }: { user: User }) {
     setKind(questions.at(index).type);
   }, [index]);
 
-  console.log(kind);
-
   function handleBack() {
     responseStore.data = {};
     router.back();

@@ -1,5 +1,5 @@
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import people from '@/app/people.json' assert { type: 'json' };
 
 type Input = {
@@ -19,10 +19,6 @@ export async function POST(req: Request) {
     return response
 }
 
-export async function DELETE(req: Request) {
-    const response = NextResponse.next()
-
-    response.cookies.delete('id')
-
-    return response
+export async function DELETE(req: NextRequest, res: NextResponse) {
+    return NextResponse.next()
 }

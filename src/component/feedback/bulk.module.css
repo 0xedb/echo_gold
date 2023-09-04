@@ -5,6 +5,7 @@
     grid-template-areas:
         "info qa";
     border: 1px solid rgba(217, 220, 222, 1);
+    margin-bottom: 80px;
 }
 
 .img {
@@ -61,6 +62,7 @@
     border-bottom: 1px solid rgba(217, 220, 222, 1);
     padding: 8px;
     text-transform: uppercase;
+    font-size: 12px;
 }
 
 .namefeed {
@@ -72,4 +74,20 @@
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr;
+}
+
+.empty {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 40px 20px;
+}
+
+.top {
+    font-size: 31px;
+    font-weight: 600;
+}
+
+.details {
+    font-weight: 400;
+    color: rgba(89, 99, 110, 1);
 }

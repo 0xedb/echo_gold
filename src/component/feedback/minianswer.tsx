@@ -11,10 +11,7 @@ type TMiniProps = {
 export function MiniAnswer(
   { question, type, required, answer = "" }: TMiniProps,
 ) {
-  console.log(type);
-
   const DisplayAns = () => {
-    console.log({ required, answer });
     if (!required && answer.length < 1) {
       return <small className={styles.skipped}>SKIPPED</small>;
     }
@@ -44,12 +41,12 @@ function Scale({ value }: TMiniComp) {
   return (
     <div className={styles.scale}>
       {Array.from({ length: 10 }).map((_, i) => (
-        <>
+        <React.Fragment key={i}>
           <span
             className={`${styles.box} ${i < v ? styles.colored : ""}`}
             key={i}
           />
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

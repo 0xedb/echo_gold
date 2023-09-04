@@ -3,8 +3,6 @@ import { Question } from "@/component/question/question";
 import people from "@/app/people.json" assert { type: "json" };
 
 export default function Page({ params }: { params: { id: string } }) {
-  console.log(params.id);
-
   return (
     <>
       <span />

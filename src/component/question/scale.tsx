@@ -16,8 +16,6 @@ export default function Scale({ id }: { id: string }) {
     responseStore.data[id] = index.toString();
   }
 
-  console.log(snap.data);
-
   function Box({ id }: { id: number }) {
     return (
       <>
